@@ -9,7 +9,7 @@ namespace TemeString2
         {
             //middleChar();
             //countChar();
-            //like();
+            Like();
 
         }
         /*
@@ -79,68 +79,53 @@ namespace TemeString2
           likes ["Jacob", "Alex"] must be "Jacob and Alex like this" 
           likes ["Max", "John", "Mark"] must be "Max, John and Mark like this" 
           likes ["Alex", "Jacob", "Mark", "Max"] must be "Alex, Jacob and 2 others like this"
-          
+          */
 
-        static void like()
+        static string Like()
         {
-            string[] likes = { " ", "Peter", "Jacob, Alex", "Max, John, Mark", "Alex, Jacob, Mark, Max" };
-            Console.WriteLine("please enter name who you like");
-            Console.ReadLine();
-            likes[0] = "no one likes this";
-            likes[1] = "Peter likes this";
-            likes[2] = "Jacob and Alex like this";
-            likes[3] = "Max, John and Mark like this";
-            likes[4] = "Alex, Jacob and 2 others like this";
+            string[] name = { " ", "Peter", "Jacob Alex", "Max John Mark", "Alex Jacob Mark Max" };
 
-            if (likes.Length == 0)
-            {
-                Console.WriteLine("no one likes this");
-            }
-            StringBuilder MyStringBuilder = new StringBuilder(likes[0], likes.Length + 50);
+            Console.WriteLine("Te rog sa sa spui carei persoane dai like? ");
+            Console.Read();
 
+            if (name == null || name.Length == 0)
+            {
+                return "no one likes this";
+            }
+            else if (name.Length == 1)
+            {
+                return $"{name[0]} likes this";
+            }
+            else if (name.Length == 2)
+            {
+                return $"{name[0]} and {name[1]} like this";
+            }
+            else if (name.Length == 3)
+            {
+                return $"{name[0]}, {name[1]} and {name[2]} like this";
+            }
+            return $"{name[0]}, {name[1]} and {name.Length - 2} others like this";
 
-            if (likes.Length == 0)
-            {
-                Console.WriteLine("no one likes this");
-            }
-            else if (likes.Length == 1)
-            {
-                Console.WriteLine(MyStringBuilder.Append(" likes this").ToString());
-            }
-            else if (likes.Length == 2)
-            {
-                Console.WriteLine(MyStringBuilder.Append(" and ").Append(likes[1]).Append(" like this").ToString());
-                //return name[0] + " and " + name[1] + like;
-            }
-            else if (likes.Length == 3)
-            {
-                Console.WriteLine(MyStringBuilder.Append(", ").Append(likes[1]).Append(" and ").Append(likes[2]).Append(" like this").ToString());
-                // return name[0]  +", "+name[1]+" and " + name[2] + like;
-            }
-            else
-            {
-                Console.WriteLine(MyStringBuilder.Append(", ").Append(likes[1]).Append(" and ").Append((likes.Length - 2).ToString()).Append(" others like this").ToString());
-                //return name[0] + ", " + name[1] + " and " + (name.Length-2)+" others " + like;
-            }
         }
-        */
-
-
-        /*
-        4. Santa is learning programming. And what could be the first program, he wants to write? Yes, the "Hello world!" of Christmas: 
-        "Ho Ho Ho!".He wants to write a function ho(), which should have the following return values:
-         ho(); should return "Ho!" ho(ho());
-         should return "Ho Ho!" ho(ho(ho())); 
-         should return "Ho Ho Ho!" Unfortunately he couldn't find any tutorial, which explains, how he could implement that. Can you help him?
-         Rules:
-         each call of ho() must add a "Ho" to the string the "Ho"'s must be separated by a space at the end of the string, there must be an exclamation mark (!), without a space
-         */
-
-
-
-
-
     }
 
 }
+
+
+
+
+/*
+4. Santa is learning programming. And what could be the first program, he wants to write? Yes, the "Hello world!" of Christmas: 
+"Ho Ho Ho!".He wants to write a function ho(), which should have the following return values:
+ ho(); should return "Ho!" ho(ho());
+ should return "Ho Ho!" ho(ho(ho())); 
+ should return "Ho Ho Ho!" Unfortunately he couldn't find any tutorial, which explains, how he could implement that. Can you help him?
+ Rules:
+ each call of ho() must add a "Ho" to the string the "Ho"'s must be separated by a space at the end of the string, there must be an exclamation mark (!), without a space
+ */
+
+
+
+
+
 
