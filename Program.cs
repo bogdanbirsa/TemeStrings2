@@ -7,8 +7,8 @@ namespace TemeString2
     {
         static void Main(string[] args)
         {
-            middleChar();
-            countChar();
+            MiddleChar();
+            CountChar();
             Like();
             Console.WriteLine(Ho());
             Console.WriteLine(Ho(Ho()));
@@ -29,7 +29,7 @@ namespace TemeString2
         PS: Should work for words of 999 characters
         */
 
-        static void middleChar()
+        static void MiddleChar()
         {
             Console.WriteLine("Te rog sa introduci cuvantul");
             var middle = Convert.ToString(Console.ReadLine());
@@ -55,7 +55,7 @@ namespace TemeString2
          countChar("fizzbuzz", "z") => 4 countChar("Fancy fifth fly aloof", "f") => 5 The character can be any alphanumeric character.
         */
 
-        static void countChar()
+        static void CountChar()
         {
             Console.WriteLine("Te rog sa introduci propozitia");
             string s = Console.ReadLine();
